@@ -1,10 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
 
-  <form>
-  	<label>name: </label>
-    <input [(ngModel)]="search.query" placeholder="name">
-  	<submit />
-  </form>
+  <h1>{{title}}</h1>
 
-</ul>
+
+  	<label>name: </label>
+    <input [(ngModel)]="search.query" placeholder="name" />
+  	<button ng-click="AppComponent.search()">search</button>
+  
+
+    <li *ngFor="let result of results">
+      <span class="badge">{{result.title}}</span>
+    </li>
+
+</div>
