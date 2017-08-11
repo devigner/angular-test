@@ -1,0 +1,5 @@
+{
+    'endpoint': 'https://api.cognitive.microsoft.com/bing/v5.0',
+    'key1':'792eb298b5884c9ca7a45335bcfb414d',
+    'key2':'d901ad2341d14f83b6cddd9aa4d8b5db'
+}
