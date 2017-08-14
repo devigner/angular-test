@@ -3,15 +3,16 @@
 
     <h1>{{title}}</h1>
 
-
     <label>name: </label>
     <input [(ngModel)]="search.query" placeholder="name"/>
     <button (click)="onSearch()">search</button>
     <strong>{{status}}</strong>
 
 
-    <li *ngFor="let result of results">
-        <span class="badge">{{result.title}}</span>
-    </li>
+    <ul *ngIf="results.webPages">
+        <li *ngFor="let result of results.webPages.value">
+            <span>{{result.name}}</span>
+        </li>
+    </ul>
 
 </div>

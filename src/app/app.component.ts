@@ -1,13 +1,10 @@
 import {Component} from '@angular/core';
-import {Headers, Http} from '@angular/http';
 import {BingService} from './search/bing.service';
-
+import {BingResult} from './search/bing.model';
 
 export class Search {
     query: string;
 }
-
-let SearchResults: Observable<BingResult[]> = [];
 
 @Component({
     selector: 'app-root',
@@ -20,15 +17,22 @@ export class AppComponent {
         query: 'hotel',
     };
     status = '---';
-    results = SearchResults;
+    results = new BingResult();
 
     constructor(private bingService: BingService) {
-    
+
     }
 
-    onSearch(){
-      this.results = this.bingService.searchBing(this.search.query);
+    onSearch() {
+        this.bingService.searchBing(this.search.query)
+            .subscribe(
+                (result) => {
+                    this.results = result;
+                },
+                (err) => {
+                    console.log(err)
+                }
+            )
+        ;
     }
-    
-    
 }

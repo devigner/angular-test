@@ -3,14 +3,14 @@ export class BingResult {
 }
 
 export class WebPages {
-  value: Page[];
+    value: Page[];
 }
 
-export class Page{
-  id: string;
-  name: string;
-  url:string;
-  displayUrl: string;
-  snippet:string;
-  dateLastCrawled: Date; 
+export class Page {
+    id: string;
+    name: string;
+    url: string;
+    displayUrl: string;
+    snippet: string;
+    dateLastCrawled: Date;
 }
